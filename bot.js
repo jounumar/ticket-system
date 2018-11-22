@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+ï»¿const Discord = require("discord.js");
 const client = new Discord.Client();
 
 
@@ -9,7 +9,7 @@ var prefix = "#"
         let support = message.guild.roles.find("name","Support Team");
         let ticketsStation = message.guild.channels.find("name", "TICKETS");
         if(!args) {
-            return message.channel.send('ÇáÑÌÃÁ ÖÚ ÓÈÈ ÇáÊÐßÑÉ.');
+            return message.channel.send('Ø§Ù„Ø±Ø¬Ø£Ø¡ Ø¶Ø¹ Ø³Ø¨Ø¨ Ø§Ù„ØªØ°ÙƒØ±Ø©.');
         };
                 if(!support) {
                     return message.channel.send('**Please make sure that `Support Team` role exists and it\'s not duplicated.**');
@@ -19,7 +19,7 @@ var prefix = "#"
             };
                 message.guild.createChannel(`ticket-${message.author.username}`, "text").then(ticket => {
                     message.delete()
-                        message.channel.send(`áÞÏ Êã ÇäÔÇÁ ÊÐßÑÊß. [ ${ticket} ]`);
+                        message.channel.send(`Ù„Ù‚Ø¯ ØªÙ… Ø§Ù†Ø´Ø§Ø¡ ØªØ°ÙƒØ±ØªÙƒ. [ ${ticket} ]`);
                     ticket.setParent(ticketsStation);
                     ticketsStation.setPosition(1);
                         ticket.overwritePermissions(message.guild.id, {
@@ -35,12 +35,12 @@ var prefix = "#"
                                     READ_MESSAGES: true
                                 });
                     let embed = new Discord.RichEmbed()
-                                .setTitle('**ÊÐßÑÉ ÌÏíÏÉ.**')
+                                .setTitle('**ØªØ°ÙƒØ±Ø© Ø¬Ø¯ÙŠØ¯Ø©.**')
                                 .setColor("RANDOM")
                                 .setThumbnail(`${message.author.avatarURL}`)
-                                .addField('ÇáÓÈÈ', args)
-                                .addField('ÕÇÍÈ ÇáÊÐßÑÉ', message.author)
-                                .addField('ÇáÑæã', `<#${message.channel.id}>`);
+                                .addField('Ø§Ù„Ø³Ø¨Ø¨', args)
+                                .addField('ØµØ§Ø­Ø¨ Ø§Ù„ØªØ°ÙƒØ±Ø©', message.author)
+                                .addField('Ø§Ù„Ø±ÙˆÙ…', `<#${message.channel.id}>`);
  
                                 ticket.sendEmbed(embed);
                 }) .catch();
@@ -51,7 +51,7 @@ var prefix = "#"
             return;
         };  
                 let embed = new Discord.RichEmbed()
-                    .setAuthor("åá ÇäÊ ãÊÃßÏ Çäß ÊÑíÏ ÇÛáÇä ÇáÊÐßÑÉ ¿ áÏíß 20 ËÇäíÉ áßí ÊÞÑÑ.")
+                    .setAuthor("Ù‡Ù„ Ø§Ù†Øª Ù…ØªØ£ÙƒØ¯ Ø§Ù†Ùƒ ØªØ±ÙŠØ¯ Ø§ØºÙ„Ø§Ù† Ø§Ù„ØªØ°ÙƒØ±Ø© ØŸ Ù„Ø¯ÙŠÙƒ 20 Ø«Ø§Ù†ÙŠØ© Ù„ÙƒÙŠ ØªÙ‚Ø±Ø±.")
                     .setColor("RANDOM");
                     message.channel.sendEmbed(embed) .then(codes => {
  
