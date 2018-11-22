@@ -46,7 +46,6 @@ var prefix = "#"
                 }) .catch();
     }
     if(message.content.startsWith(prefix + 'يغلق')) {
-            if(!message.member.hasPermission("ADMINISTRATOR")) return;
         if(!message.channel.name.startsWith("ticket")) {
             return;
         };  
